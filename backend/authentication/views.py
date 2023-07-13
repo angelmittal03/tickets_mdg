@@ -26,7 +26,7 @@ class UserAuthenticationView(APIView):
         data = JSONParser().parse(request)
         serializer = AuthenticationSerializer(data=data)
         if(serializer.is_valid()): 
-            if(Authentication.objects.filter(email=serializer.validated_data['email']).count()==0):
+            if(Authentication.objects.filter(email=serializer.validated_data['email']).count()==0 and Authentication.objects.filter(email=serializer.validated_data['phone']).count()==0):
                 pwd = serializer.validated_data['password']
                 encryptedpassword=make_password(pwd)
                 print(encryptedpassword)
@@ -42,7 +42,7 @@ class UserAuthenticationView(APIView):
         post = Authentication.objects.get(id=id)
         serializer = AuthenticationSerializer(post, data=request.data, partial=True)
         if serializer.is_valid():
-            if(Authentication.objects.filter(email=serializer.validated_data['email']).count()==0):
+            if(Authentication.objects.filter(email=serializer.validated_data['email']).count()==0 and Authentication.objects.filter(email=serializer.validated_data['phone']).count()==0):
                 pwd = serializer.validated_data['password']
                 encryptedpassword=make_password(pwd)
                 print(encryptedpassword)
@@ -62,14 +62,14 @@ class UserAuthenticationView(APIView):
     
 class UserAuthenticationsView(APIView):
     @csrf_exempt
-    def get(self, request, Email):
-        post = Authentication.objects.filter(email=Email)
+    def get(self, request, Phone):
+        post = Authentication.objects.filter(phone=Phone)
         if(post):
             data = AuthenticationSerializer(post, many=True).data
             return Response(data)
         return JsonResponse("Email not found", status=404, safe=False)
     @csrf_exempt
-    def delete(self, request, Email, format=None):
-        post = Authentication.objects.filter(email=Email)
+    def delete(self, request, Phone, format=None):
+        post = Authentication.objects.filter(phone=Phone)
         post.delete()
         return Response(status=204)

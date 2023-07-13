@@ -4,8 +4,8 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from . import views
 
 urlpatterns = [
-    path('<int:id>/',views.UserAuthenticationView.as_view()),
-    path('<str:Email>/',views.UserAuthenticationsView.as_view()),
+    # path('<int:id>/',views.UserAuthenticationView.as_view()),
+    path('<int:Phone>/',views.UserAuthenticationsView.as_view()),
     path('',views.UserAuthenticationView.as_view()),
 ]
 
