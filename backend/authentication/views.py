@@ -35,9 +35,9 @@ class UserAuthenticationView(APIView):
             print(checkpassword)
             serializer.validated_data['password'] = encryptedpassword
             serializer.save()
-            return JsonResponse(serializer.data, status=201)
-            # return JsonResponse("Already registered", status=403,safe=False)
-        return JsonResponse(serializer.errors, status=400)
+            return JsonResponse("Successfully Registered", status=201, safe=False)
+            
+        return JsonResponse("Email ID/ Phone No already registered.", status=400, safe=False)
     @csrf_exempt
     def patch(self, request, id, format=None):
         post = Authentication.objects.get(id=id)
