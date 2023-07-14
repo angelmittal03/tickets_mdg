@@ -63,11 +63,19 @@ class UserAuthenticationView(APIView):
     
 class UserAuthenticationsView(APIView):
     @csrf_exempt
-    def get(self, request, Phone):
+    def post(self, request, Phone):
+        print("hi")
         post = Authentication.objects.filter(phone=Phone)
         if(post):
+            print("hi")
             data = AuthenticationSerializer(post, many=True).data
-            return Response(data)
+            # print(JSONParser().parse(request))
+            req_body = JSONParser().parse(request)
+            print("hi")
+            print(req_body)
+            if(check_password(req_body['password'],data[0].get('password'))):
+                return JsonResponse("Successfully Authenticated", status=200, safe=False)
+            return JsonResponse('Invalid Password', status=402)
         return JsonResponse("Email not found", status=404, safe=False)
     @csrf_exempt
     def delete(self, request, Phone, format=None):
