@@ -1,6 +1,7 @@
 "use client";
-import { Fragment, useState } from "react";
+import { Fragment, useState,  } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import {
   Button,
   Dialog,
@@ -8,24 +9,25 @@ import {
   DialogBody,
   DialogFooter,
   Input,
-} from "@material-tailwind/react";
+} from "@material-tailwind/react"; 
 
 import "../../globals.css";
 import Head from "next/head";
-import Script from "next/script";
-export default function AuthDialogBox() {
+import Script from "next/script";    //imports
+
+export default function AuthDialogBox({isLog}) {     
+  const router = useRouter();          //state functions
   const [signInopen, setSignInOpen] = useState(false);
   const [pwdHidden, setPwdHidden] = useState(true);
   const [signUpopen, setSignUpOpen] = useState(false);
   const [ispwdValid, setisPwdValid] = useState(Array(4).fill(false));
-
   const handleSignInOpen = () => {
     setSignInOpen(!signInopen);
   };
   const handleSignUpOpen = () => {
     setSignUpOpen(!signUpopen);
   };
-  let eye = () => {
+  let eye = () => {                                 //eye svg 
     return pwdHidden ? (
       <svg
         onClick={() => {
@@ -36,7 +38,7 @@ export default function AuthDialogBox() {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-8 h-8 -ml-[15px] mt-[3px] "
+        className="w-8 h-8 self-right ml-[100px] -mr-[100px] mt-[3px] "
       >
         <path
           strokeLinecap="round"
@@ -59,7 +61,7 @@ export default function AuthDialogBox() {
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        className="w-8 h-8 -ml-[15px] mt-[3px]"
+        className="w-8 h-8 -mr-[5px] mt-[3px]"
       >
         <path
           stroke-linecap="round"
@@ -69,7 +71,8 @@ export default function AuthDialogBox() {
       </svg>
     );
   };
-  const handleSignInSubmit = () => {
+
+  const handleSignInSubmit = () => {                      //SignIn POST METHOD API + fetch response 
     const form = document.querySelector("form");
     const Form = form!;
     const submitter = document.getElementById("submit");
@@ -97,7 +100,7 @@ export default function AuthDialogBox() {
       .catch((error) => console.log("error", error));
   };
 
-  const handleSignUpSubmit = () => {
+  const handleSignUpSubmit = () => {                       //SignUp POST method API
     const form = document.querySelector("form");
     const Form = form!;
     const submitter = document.getElementById("submit");
@@ -140,11 +143,14 @@ export default function AuthDialogBox() {
             );
           }
         })
+        
         .catch((error) => console.log("error", error));
     } else {
       alert("Passwords doesn't match");
     }
   };
+
+
   var password = document.querySelector<HTMLInputElement>("#password");
   let text, validIcons, invalidIcons;
 
@@ -170,7 +176,7 @@ export default function AuthDialogBox() {
     invalidIcons!.style.opacity = "1";
   }
 
-  function textChange() {
+   function textChange() {
     let pwdvalid = ispwdValid.slice();
     if (password?.value.match(/[A-Z]/) != null) {
       valid("capital", "fa-check", "fa-times");
@@ -213,6 +219,9 @@ export default function AuthDialogBox() {
       setisPwdValid(pwdvalid);
     }
   }
+  const handleLinkClick = (url: string) => {
+    router.push(url); }
+
   return (
     <main>
       <Head>
@@ -220,9 +229,15 @@ export default function AuthDialogBox() {
         <link rel="stylesheet" href="./style.css"></link>
       </Head>
       <Fragment>
-        <Button onClick={handleSignInOpen} variant="gradient">
+        
+          <div className='p-4' onClick={() => handleLinkClick('/Profile')}>
+              Profile
+            </div> 
+        {isLog ? <Button onClick={handleSignInOpen} variant="gradient">
+          Profile 
+        </Button>:<Button onClick={handleSignInOpen} variant="gradient">
           Sign In
-        </Button>
+        </Button>}
         <Dialog
           open={signInopen}
           handler={handleSignInOpen}
@@ -297,9 +312,9 @@ export default function AuthDialogBox() {
       </Fragment>
       {/* +++++++++++++++++++ */}
       <Fragment>
-        <Button onClick={handleSignUpOpen} variant="gradient">
+        {/* <Button onClick={handleSignUpOpen} variant="gradient">      
           Sign Up
-        </Button>
+        </Button> */}
         <Dialog
           open={signUpopen}
           handler={handleSignUpOpen}

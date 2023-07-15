@@ -1,6 +1,12 @@
 "use client"
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import { stringify } from 'querystring';
+import { Anybody } from 'next/font/google';
+
+import { useState } from 'react';
+import AuthDialogBox from '../AuthForm/auth';
+
 
 const Links = [
   {
@@ -17,19 +23,16 @@ const Links = [
     id: 3,
     title: "Bus",
     url: "/Bus/BusIndex",
-  },
-  {
-    id: 4,
-    title: "Profile",
-    url: "/Profile",
-  },
+  }
+  
 ];
 
 const Navbar: React.FC = () => {
+  const [isSignedIn, setIsSignedIn] = useState(false);
   const router = useRouter();
-
   const handleLinkClick = (url: string) => {
     router.push(url);
+  
   };
 
   return (
@@ -44,9 +47,13 @@ const Navbar: React.FC = () => {
               {link.title}
             </li>
           ))}
-          <li className='p-4' onClick={() => handleLinkClick('/LoginPage')}>
-            Login
-          </li>
+           {/* {isSignedIn ? ( */}
+           <li className='p-4' onClick={() => handleLinkClick('/Profile')}>
+              Profile
+            </li>
+            <li className='p-4' onClick={()=> {setIsSignedIn(true)}}>
+           <AuthDialogBox isLog={isSignedIn} />
+            </li> 
         </ul>
       </div>
     </div>
