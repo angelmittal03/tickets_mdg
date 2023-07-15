@@ -21,7 +21,7 @@ class Item (models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     desc = models.TextField()
     location = models.TextField() 
-    availibility = models.CharField(max_length=50, validators=[int_list_validator(sep=', ', message=None, code='invalid', allow_negative=False)]) 
+    availibility = models.CharField(max_length=50) 
     rows = models.IntegerField()  
     cols = models.IntegerField()  
 

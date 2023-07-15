@@ -2,6 +2,7 @@ from django.db import models
 
 # Schema
 # name: String
+# Email : string -> can be null/  can't be left
 # Email : string
 # phone : int
 # Pwd: string - 8 characters,etc
