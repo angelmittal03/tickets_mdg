@@ -43,3 +43,6 @@ a {
   flex-direction:column;
   justify-content:space-between;
 }
+.label-gap {
+  margin-bottom: 10px; 
+}
