@@ -20,6 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <div className="bg-cover bg-center bg-no-repeat bg-top bg-fixed bg-[url('../../public/Desktop\ -\ 2.png')]">
       <body className={poppins.className}>
         <div className="container ">
         <Navbar/>
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Footer />
         </div>
       </body>
+      </div>
     </html>
   )
 }
