@@ -15,7 +15,7 @@ export default function MoviesIndex() {
         }
 
         getmovies();
-    }, ['dependency']);
+    }, ['dependencies']); //add dependency if any 
     return (
         <div className="text-center">
             <h1 className="font-bold text- 6xl mt-14"></h1>
