@@ -8,6 +8,8 @@ from django.http import Http404, JsonResponse
 import requests
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
+from rest_framework.response import Response
+
 
 def create_new_ref_number():
     not_unique = True
@@ -19,6 +21,8 @@ def create_new_ref_number():
 
 
 class UserPaymentView(APIView):
+    
+        
     @csrf_exempt
     def put(self, request):
 
@@ -45,7 +49,7 @@ class UserPaymentView(APIView):
                 "send_sms": True,
                 "send_email": False
             },
-            "link_meta": {"return_url": "https://www.iitr.ac.in"},
+            "link_meta": {"return_url": "http://localhost:3000/Success/"+data.get("transaction_id")},
             "link_id": data.get("transaction_id"),
             "link_amount": float(data.get("amount")),
             "link_currency": "INR",
@@ -68,5 +72,16 @@ class UserPaymentView(APIView):
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
     
-
+class UserPaymentsView(APIView):
+    
+    def get(self, request, transaction_id):
+        item = Payment.objects.filter(transaction_id=transaction_id)
+        seats = PaymentSerializer(item, many=True).data[0]
+        return Response(seats)
+    
+    def post(self, request, transaction_id):
+        item = Payment.objects.filter(transaction_id=transaction_id)
+        seats = PaymentSerializer(item, many=True).data
+        return Response(seats)
+        
 

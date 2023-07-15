@@ -1,6 +1,6 @@
 from django.db import models
+from django.core.validators import int_list_validator
 
-from authentication.models import Authentication
 
 # Schema
 # name: string
@@ -17,3 +17,4 @@ class Payment(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     transaction_id = models.TextField(blank=True,null=True, unique=True)
     transaction_url= models.TextField(blank=True,null=True, unique=True)
+    seats= models.CharField(max_length=50) 

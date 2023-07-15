@@ -42,8 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'authentication',
-    'payments'
+    'payments',
+    'movies'
 ]
 
 MIDDLEWARE = [
@@ -54,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 PASSWORD_HASHERS = [
@@ -146,3 +149,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CASHFREE_KEY_ID=os.environ["CASHFREE_KEY_ID"]
 CASHFREE_SECRET_ID=os.environ["CASHFREE_SECRET_ID"]
+
+ORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = (
+  'http://localhost:3000',
+)
