@@ -46,3 +46,9 @@ a {
 .label-gap {
   margin-bottom: 10px; 
 }
+
+.Rootlayout {
+  background-image: url('../../public/Desktop\ -\ 2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
