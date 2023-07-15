@@ -3,6 +3,13 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
+import { Inter, Poppins, Playfair_Display } from 'next/font/google'
+import Navbar from './Components/Navbar/NavBar'
+import Footer from './Components/Footer/Footer'
+
+const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({ subsets: ['latin'], weight: ['300','500','700','900'] })
+const playfairDisplay = Playfair_Display({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +23,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <div className="bg-cover bg-center bg-no-repeat bg-top bg-fixed bg-[url('../../public/Desktop\ -\ 2.png')]">
+      <body className={poppins.className}>
+        <div className="container ">
+        <Navbar/>
+        {children}
+        <Footer />
+        </div>
+      </body>
+      </div>
     </html>
   )
 }
