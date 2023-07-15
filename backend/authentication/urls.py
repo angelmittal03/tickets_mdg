@@ -1,11 +1,10 @@
-from django.contrib import admin
 from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 from . import views
 
 urlpatterns = [
     # path('<int:id>/',views.UserAuthenticationView.as_view()),
-    path('<int:Phone>/',views.UserAuthenticationsView.as_view()),
+    path('<str:Phone>/',views.UserAuthenticationsView.as_view()),
     path('',views.UserAuthenticationView.as_view()),
 ]
 
