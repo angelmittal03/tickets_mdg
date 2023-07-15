@@ -4,7 +4,6 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.http import Http404, JsonResponse
-from rest_framework.decorators import api_view
 from authentication.models import Authentication
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
@@ -25,17 +24,19 @@ class UserAuthenticationView(APIView):
     def put(self, request):
         data = JSONParser().parse(request)
         serializer = AuthenticationSerializer(data=data)
+        
         if(serializer.is_valid()): 
-            if(Authentication.objects.filter(email=serializer.validated_data['email']).count()==0 and Authentication.objects.filter(email=serializer.validated_data['phone']).count()==0):
-                pwd = serializer.validated_data['password']
-                encryptedpassword=make_password(pwd)
-                print(encryptedpassword)
-                checkpassword=check_password(pwd, encryptedpassword)
-                print(checkpassword)
-                serializer.validated_data['password'] = encryptedpassword
-                serializer.save()
-                return JsonResponse(serializer.data, status=201)
-            return JsonResponse("Already registered", status=403,safe=False)
+            # email = serializer.validated_data['email'] 
+            # if((serializer.validated_data['email']==None or Authentication.objects.filter(email=serializer.validated_data['email']).count()==0  ) and Authentication.objects.filter(email=serializer.validated_data['phone']).count()==0):
+            pwd = serializer.validated_data['password']
+            encryptedpassword=make_password(pwd)
+            print(encryptedpassword)
+            checkpassword=check_password(pwd, encryptedpassword)
+            print(checkpassword)
+            serializer.validated_data['password'] = encryptedpassword
+            serializer.save()
+            return JsonResponse(serializer.data, status=201)
+            # return JsonResponse("Already registered", status=403,safe=False)
         return JsonResponse(serializer.errors, status=400)
     @csrf_exempt
     def patch(self, request, id, format=None):
