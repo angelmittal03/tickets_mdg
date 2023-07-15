@@ -9,13 +9,13 @@ async function fetchMovies() {
         return movies;
     }
 
-export async function GET(request) {
-    const coins = await fetchMovies();
+export async function GET(request:any) {
+    const movies = await fetchMovies();
     const { searchParams } = new URL(request.url);
     console.log(request.url)
     const query = searchParams.get('query');
 
-    const filteredmovies = movies.name.filter((movies) => {
+    const filteredmovies = movies.name.filter((movies:any) => {
         return movies.name.toLowerCase().include(query.toLowerCase())
 
     })

@@ -1,5 +1,5 @@
+from movies.models import Item
 from rest_framework import serializers
-from base.models import Item
 
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:

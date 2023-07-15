@@ -20,7 +20,7 @@ export default function Home() {
           <div>
           <Image src={place} alt='Destination' className="w-full h-auto rounded-md"></Image>
           <div className=" flex content-center mt-2">
-          <a href="./Bus/BusIndex" class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 
+          <a href="./Bus/BusIndex" className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 
           px-4 border border-red-500 hover:border-transparent rounded">Explore destinations !</a> 
           </div>
           </div></div></div>
