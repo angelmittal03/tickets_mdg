@@ -75,7 +75,7 @@ class UserAuthenticationsView(APIView):
             print(req_body)
             if(check_password(req_body['password'],data[0].get('password'))):
                 return JsonResponse("Successfully Authenticated", status=200, safe=False)
-            return JsonResponse('Invalid Password', status=402)
+            return JsonResponse('Invalid Password', status=402, safe=False)
         return JsonResponse("Email not found", status=404, safe=False)
     @csrf_exempt
     def delete(self, request, Phone, format=None):
