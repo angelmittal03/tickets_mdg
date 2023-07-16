@@ -1,0 +1,276 @@
+{
+  "ssrModuleMapping": {
+    "(app-client)/./node_modules/next/dist/client/components/error-boundary.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/error-boundary.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/app-router.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/app-router.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/layout-router.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/layout-router.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/render-from-template-context.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/Components/Navbar/NavBar.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/Components/Navbar/NavBar.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/Movies/MoviesIndex/page.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/Movies/MoviesIndex/page.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/image-component.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/image-component.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/Oppenheimercover.jpg": {
+      "*": {
+        "id": "(sc_client)/./public/Oppenheimercover.jpg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/Bus/BusIndex/page.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/Bus/BusIndex/page.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/destinations.jpeg": {
+      "*": {
+        "id": "(sc_client)/./public/destinations.jpeg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    }
+  },
+  "edgeSSRModuleMapping": {},
+  "clientModules": {
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/dist/client/components/error-boundary.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/dist/esm/client/components/error-boundary.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/dist/client/components/app-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/dist/esm/client/components/app-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/dist/client/components/layout-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/dist/esm/client/components/layout-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/dist/client/components/render-from-template-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/dist/esm/client/components/render-from-template-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}": {
+      "id": "(app-client)/./node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Poppins\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":[\"300\",\"500\",\"700\",\"900\"]}],\"variableName\":\"poppins\"}": {
+      "id": "(app-client)/./node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Poppins\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":[\"300\",\"500\",\"700\",\"900\"]}],\"variableName\":\"poppins\"}",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Playfair_Display\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"playfairDisplay\"}": {
+      "id": "(app-client)/./node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Playfair_Display\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"playfairDisplay\"}",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/src/app/globals.css": {
+      "id": "(app-client)/./src/app/globals.css",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/src/app/Components/Navbar/NavBar.tsx": {
+      "id": "(app-client)/./src/app/Components/Navbar/NavBar.tsx",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/src/app/Movies/MoviesIndex/page.tsx": {
+      "id": "(app-client)/./src/app/Movies/MoviesIndex/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/Movies/MoviesIndex/page:static/chunks/app/Movies/MoviesIndex/page.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/dist/client/image-component.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/image-component.js",
+      "name": "*",
+      "chunks": [
+        "app/Success/page:static/chunks/app/Success/page.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/node_modules/next/dist/esm/client/image-component.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/image-component.js",
+      "name": "*",
+      "chunks": [
+        "app/Success/page:static/chunks/app/Success/page.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/public/Oppenheimercover.jpg": {
+      "id": "(app-client)/./public/Oppenheimercover.jpg",
+      "name": "*",
+      "chunks": [
+        "app/Movies/[movie_id]/page:static/chunks/app/Movies/[movie_id]/page.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/src/app/Bus/BusIndex/page.tsx": {
+      "id": "(app-client)/./src/app/Bus/BusIndex/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/Bus/BusIndex/page:static/chunks/app/Bus/BusIndex/page.js"
+      ],
+      "async": false
+    },
+    "/Users/casper/DevProjects/tickets_mdg/frontend/public/destinations.jpeg": {
+      "id": "(app-client)/./public/destinations.jpeg",
+      "name": "*",
+      "chunks": [
+        "app/Success/page:static/chunks/app/Success/page.js"
+      ],
+      "async": false
+    }
+  },
+  "entryCSSFiles": {
+    "/Users/casper/DevProjects/tickets_mdg/frontend/src/app/layout": [
+      "static/css/app/layout.css"
+    ],
+    "/Users/casper/DevProjects/tickets_mdg/frontend/src/app/page": [],
+    "/Users/casper/DevProjects/tickets_mdg/frontend/src/app/Movies/MoviesIndex/page": [],
+    "/Users/casper/DevProjects/tickets_mdg/frontend/src/app/Profile/page": [],
+    "/Users/casper/DevProjects/tickets_mdg/frontend/src/app/Movies/[movie_id]/page": [],
+    "/Users/casper/DevProjects/tickets_mdg/frontend/src/app/Ticketsdisplay/page": [],
+    "/Users/casper/DevProjects/tickets_mdg/frontend/src/app/Bus/BusIndex/page": [],
+    "/Users/casper/DevProjects/tickets_mdg/frontend/src/app/Bus/[bus_id]/page": [],
+    "/Users/casper/DevProjects/tickets_mdg/frontend/src/app/Success/page": []
+  }
+}
