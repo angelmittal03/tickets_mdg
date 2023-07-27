@@ -11,6 +11,8 @@ export default function MoviesIndex() {
         const getmovies = async () => {
             const response = await fetch('/api/Movies');
             const movies : any[]= await response.json();
+            console.log(movies);
+            
             setmovies(movies);
         }
         // movies.pop()

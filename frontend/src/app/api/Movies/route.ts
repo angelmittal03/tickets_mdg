@@ -1,9 +1,10 @@
+// 'use client';
 import { NextResponse } from "next/server";
 
 async function fetchMovies(noofmovies:number) {
     const url :string= 'http://localhost:8000/movies/'
     let movies= []
-    for (let index = 0; index <= noofmovies; index++) {
+    for (let index = 1; index <= noofmovies; index++) {
         const response = await fetch(url+index, {
             "method": "GET",}
             )
@@ -25,6 +26,7 @@ async function fetchNoOfMovies() {
 }
 export async function GET(request) {
     const noofmovies = await fetchNoOfMovies();
+    console.log(noofmovies)
     const movies = await fetchMovies(noofmovies)
     return NextResponse.json(movies);
 }

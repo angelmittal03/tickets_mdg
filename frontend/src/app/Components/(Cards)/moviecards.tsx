@@ -11,7 +11,7 @@ export default function Movies({movies}) {
               <h1> {movie.name}</h1>
               <p> {movie.date}</p>
               <p> {movie.time}</p>
-              <p> {movie.price}</p>
+              <p> Rs.{movie.price}</p>
             </div>
           </li>
         ))}
