@@ -3,6 +3,7 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import { stringify } from 'querystring';
 import { Anybody } from 'next/font/google';
+import Link from 'next/link';
 
 
 import { Fragment, useState,  } from "react";
@@ -274,7 +275,7 @@ const Navbar: React.FC = () => {
         
         <Button onClick={handleSignInOpen} variant="gradient">
           Sign In
-        </Button>:<Button onClick={()=>handleLinkClick('/Profile')} variant="gradient">
+        </Button>:<Button onClick={()=>router.push('/Profile')} variant="gradient">
           Profile 
         </Button>
         }
@@ -418,7 +419,7 @@ const Navbar: React.FC = () => {
                 type={pwdHidden ? "Password" : "text"}
                 id="password"
                 name="password"
-                className="bg-white rounded-full h-[3.75rem] text-[26px] border-none"
+                className="bg-white rounded-full h-11 text-[26px] border-none"
                 placeholder="Enter The Password"
                 labelProps={{ className: "hidden" }}
                 icon={eye()}
@@ -492,13 +493,13 @@ const Navbar: React.FC = () => {
   return (
     <div className='fixed left-1 top-5 w-full z-4 ease-in duration-300'>
       <div className='max-w-[1240px] m-auto flex justify-between items-center p-4'>
-        <h1 className='font-bold text-4xl' onClick={() => handleLinkClick('/')}>
+        <h1 className='font-bold text-4xl' onClick={() => router.push('/')}>
           <img src='/logo.svg'></img>
         </h1>
         <ul className='hidden sm:flex'>
           {Links.map((link) => (
-            <li className='p-4' key={link.id} onClick={() => handleLinkClick(link.url)}>
-              {link.title}
+            <li className='p-4' key={link.id} >
+              <Link href={link.url} >{link.title}</Link>
             </li>
           ))}
            {/* {isSignedIn ? ( */}

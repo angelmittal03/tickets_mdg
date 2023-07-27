@@ -2,8 +2,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 
 import { Inter, Poppins, Playfair_Display } from 'next/font/google'
-import Navbar from './Components/Navbar/NavBar'
-import Footer from './Components/Footer/Footer'
+import Navbar from './components/Navbar/NavBar'
+import Footer from './components/Footer/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 const poppins = Poppins({ subsets: ['latin'], weight: ['300','500','700','900'] })
